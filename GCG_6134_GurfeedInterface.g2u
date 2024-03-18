@@ -1,0 +1,883 @@
+﻿Program.Sub.ScreenSU.Start
+Gui.frmExport..Create(BaseForm)
+Gui.frmExport..Caption("GurFeed Interface")
+Gui.frmExport..Size(1024,747)
+Gui.frmExport..MinX(0)
+Gui.frmExport..MinY(0)
+Gui.frmExport..Position(0,0)
+Gui.frmExport..AlwaysOnTop(False)
+Gui.frmExport..FontName("Tahoma")
+Gui.frmExport..FontSize(8.25)
+Gui.frmExport..ControlBox(True)
+Gui.frmExport..MaxButton(False)
+Gui.frmExport..MinButton(False)
+Gui.frmExport..MousePointer(0)
+Gui.frmExport..Moveable(True)
+Gui.frmExport..Sizeable(True)
+Gui.frmExport..ShowInTaskBar(True)
+Gui.frmExport..TitleBar(True)
+Gui.frmExport..Event(UnLoad,frmExport_UnLoad)
+Gui.frmExport.GsGrid.Create(GsGridControl)
+Gui.frmExport.GsGrid.Enabled(True)
+Gui.frmExport.GsGrid.Visible(True)
+Gui.frmExport.GsGrid.Zorder(0)
+Gui.frmExport.GsGrid.Size(984,638)
+Gui.frmExport.GsGrid.Position(20,54)
+Gui.frmExport.lbl1.Create(Label,"From",True,30,16,0,24,17,True,0,"Tahoma",7.8,,0,0)
+Gui.frmExport.lbl1.BorderStyle(0)
+Gui.frmExport.lbl2.Create(Label,"To",True,15,16,0,166,16,True,0,"Tahoma",7.8,,0,0)
+Gui.frmExport.lbl2.BorderStyle(0)
+Gui.frmExport.dtpTo.Create(DatePicker)
+Gui.frmExport.dtpTo.Enabled(True)
+Gui.frmExport.dtpTo.Visible(True)
+Gui.frmExport.dtpTo.Zorder(0)
+Gui.frmExport.dtpTo.Size(100,22)
+Gui.frmExport.dtpTo.Position(190,15)
+Gui.frmExport.dtpTo.CheckBox(False)
+Gui.frmExport.dtpTo.FontName("Tahoma")
+Gui.frmExport.dtpTo.FontSize(7.8)
+Gui.frmExport.dtpStart.Create(DatePicker)
+Gui.frmExport.dtpStart.Enabled(True)
+Gui.frmExport.dtpStart.Visible(True)
+Gui.frmExport.dtpStart.Zorder(0)
+Gui.frmExport.dtpStart.Size(95,22)
+Gui.frmExport.dtpStart.Position(60,14)
+Gui.frmExport.dtpStart.CheckBox(False)
+Gui.frmExport.dtpStart.FontName("Tahoma")
+Gui.frmExport.dtpStart.FontSize(7.8)
+Gui.frmExport.cmdFilter.Create(Button)
+Gui.frmExport.cmdFilter.Enabled(True)
+Gui.frmExport.cmdFilter.Visible(True)
+Gui.frmExport.cmdFilter.Zorder(0)
+Gui.frmExport.cmdFilter.Size(81,29)
+Gui.frmExport.cmdFilter.Position(317,14)
+Gui.frmExport.cmdFilter.Caption("Filter")
+Gui.frmExport.cmdFilter.FontName("Tahoma")
+Gui.frmExport.cmdFilter.FontSize(7.8)
+Gui.frmExport.cmdFilter.Event(Click,cmdFilter_Click)
+Gui.frmExport.cmdMaintenance.Create(Button)
+Gui.frmExport.cmdMaintenance.Enabled(True)
+Gui.frmExport.cmdMaintenance.Visible(True)
+Gui.frmExport.cmdMaintenance.Zorder(0)
+Gui.frmExport.cmdMaintenance.Size(94,29)
+Gui.frmExport.cmdMaintenance.Position(921,13)
+Gui.frmExport.cmdMaintenance.Caption("Maintenance")
+Gui.frmExport.cmdMaintenance.FontName("Tahoma")
+Gui.frmExport.cmdMaintenance.FontSize(7.8)
+Gui.frmExport.cmdMaintenance.Event(Click,cmdMaintenance_Click)
+Gui.frmExport.cmdExport.Create(Button)
+Gui.frmExport.cmdExport.Enabled(True)
+Gui.frmExport.cmdExport.Visible(True)
+Gui.frmExport.cmdExport.Zorder(0)
+Gui.frmExport.cmdExport.Size(94,29)
+Gui.frmExport.cmdExport.Position(421,13)
+Gui.frmExport.cmdExport.Caption("Export")
+Gui.frmExport.cmdExport.FontName("Tahoma")
+Gui.frmExport.cmdExport.FontSize(7.8)
+Gui.frmExport.cmdExport.Event(Click,cmdExport_Click)
+Gui.frmExport.frameMaint.Create(Frame)
+Gui.frmExport.frameMaint.Enabled(True)
+Gui.frmExport.frameMaint.Visible(False)
+Gui.frmExport.frameMaint.Zorder(0)
+Gui.frmExport.frameMaint.Size(367,147)
+Gui.frmExport.frameMaint.Position(325,116)
+Gui.frmExport.frameMaint.Caption("")
+Gui.frmExport.frameMaint.FontName("Tahoma")
+Gui.frmExport.frameMaint.FontSize(7.8)
+Gui.frmExport.lbl3.Create(Label,"Export Folder",True,76,16,0,6,40,True,0,"Tahoma",7.8,,0,0)
+Gui.frmExport.lbl3.BorderStyle(0)
+Gui.frmExport.lbl3.Parent("frameMaint")
+Gui.frmExport.txtFolder.Create(TextBox,"",True,320,22,0,6,62,True,0,"Tahoma",7.8,,1)
+Gui.frmExport.txtFolder.Parent("frameMaint")
+Gui.frmExport.txtFolder.Locked(True)
+Gui.frmExport.cmdBrowFolder.Create(Button)
+Gui.frmExport.cmdBrowFolder.Enabled(True)
+Gui.frmExport.cmdBrowFolder.Visible(True)
+Gui.frmExport.cmdBrowFolder.Zorder(0)
+Gui.frmExport.cmdBrowFolder.Size(32,23)
+Gui.frmExport.cmdBrowFolder.Position(330,61)
+Gui.frmExport.cmdBrowFolder.Caption("^")
+Gui.frmExport.cmdBrowFolder.FontName("Tahoma")
+Gui.frmExport.cmdBrowFolder.FontSize(7.8)
+Gui.frmExport.cmdBrowFolder.Parent("frameMaint")
+Gui.frmExport.cmdBrowFolder.Event(Click,cmdBrowFolder_Click)
+Gui.frmExport.cmdClose.Create(Button)
+Gui.frmExport.cmdClose.Enabled(True)
+Gui.frmExport.cmdClose.Visible(True)
+Gui.frmExport.cmdClose.Zorder(0)
+Gui.frmExport.cmdClose.Size(72,26)
+Gui.frmExport.cmdClose.Position(293,8)
+Gui.frmExport.cmdClose.Caption("Exit")
+Gui.frmExport.cmdClose.FontName("Tahoma")
+Gui.frmExport.cmdClose.FontSize(7.8)
+Gui.frmExport.cmdClose.Event(Click,cmdClose_Click)
+Gui.frmExport.cmdClose.Parent("frameMaint")
+Gui.frmExport.cmdSave.Create(Button)
+Gui.frmExport.cmdSave.Enabled(True)
+Gui.frmExport.cmdSave.Visible(True)
+Gui.frmExport.cmdSave.Zorder(0)
+Gui.frmExport.cmdSave.Size(70,29)
+Gui.frmExport.cmdSave.Position(5,113)
+Gui.frmExport.cmdSave.Caption("Save")
+Gui.frmExport.cmdSave.FontName("Tahoma")
+Gui.frmExport.cmdSave.FontSize(7.8)
+Gui.frmExport.cmdSave.Event(Click,cmdSave_Click)
+Gui.frmExport.cmdSave.Parent("frameMaint")
+Gui.frmAddLines..Create(BaseForm)
+Gui.frmAddLines..Caption("Index Codes")
+Gui.frmAddLines..Size(426,940)
+Gui.frmAddLines..MinX(0)
+Gui.frmAddLines..MinY(0)
+Gui.frmAddLines..Position(0,0)
+Gui.frmAddLines..AlwaysOnTop(False)
+Gui.frmAddLines..FontName("Tahoma")
+Gui.frmAddLines..FontSize(8.25)
+Gui.frmAddLines..ControlBox(True)
+Gui.frmAddLines..MaxButton(False)
+Gui.frmAddLines..MinButton(False)
+Gui.frmAddLines..MousePointer(0)
+Gui.frmAddLines..Moveable(True)
+Gui.frmAddLines..Sizeable(True)
+Gui.frmAddLines..ShowInTaskBar(True)
+Gui.frmAddLines..TitleBar(True)
+Gui.frmAddLines..Event(UnLoad,Unload)
+Gui.frmAddLines.GsGridlines.Create(GsGridControl)
+Gui.frmAddLines.GsGridlines.Enabled(True)
+Gui.frmAddLines.GsGridlines.Visible(True)
+Gui.frmAddLines.GsGridlines.Zorder(0)
+Gui.frmAddLines.GsGridlines.Size(396,827)
+Gui.frmAddLines.GsGridlines.Position(19,42)
+Gui.frmAddLines.GsGridlines.Event(RowCellClick,GsGridlines_RowCellClick)
+Gui.frmAddLines.cmdSaveMaint.Create(Button)
+Gui.frmAddLines.cmdSaveMaint.Enabled(True)
+Gui.frmAddLines.cmdSaveMaint.Visible(True)
+Gui.frmAddLines.cmdSaveMaint.Zorder(0)
+Gui.frmAddLines.cmdSaveMaint.Size(94,29)
+Gui.frmAddLines.cmdSaveMaint.Position(322,6)
+Gui.frmAddLines.cmdSaveMaint.Caption("Save")
+Gui.frmAddLines.cmdSaveMaint.FontName("Tahoma")
+Gui.frmAddLines.cmdSaveMaint.FontSize(7.8)
+Gui.frmAddLines.cmdSaveMaint.Event(Click,cmdSaveMaint_Click)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+Function.Intrinsic.UI.UsePixels ' Allows you to use Pixels instead of Twips throughout
+
+f.Intrinsic.Control.Try
+V.Global.bSave.Declare
+
+
+f.Intrinsic.Control.If(v.Caller.Switches,=,"M")
+	'Custom menu item - Product Grouping Codes
+	f.Intrinsic.Control.CallSub(Load_Grid)
+f.Intrinsic.Control.Else
+	f.ODBC.Connection!con.opencompanyconnection
+	f.Intrinsic.Control.CallSub(Check_Table)
+	f.Intrinsic.Control.CallSub(Read_Settings)
+	gui.frmExport..Show
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.Main.End
+
+Program.Sub.cmdFilter_Click.Start
+f.Intrinsic.Control.Try
+
+v.Local.ssql.Declare
+v.Local.sfrmdt.Declare
+v.Local.stodt.Declare
+v.Local.iTotClmn.Declare
+v.Local.stitle.Declare
+v.Local.i.Declare
+
+
+v.Local.sfrmdt.Set(v.Screen.frmExport!dtpStart.Value)
+v.Local.stodt.set(v.Screen.frmExport!dtpTo.Value)
+
+
+f.Intrinsic.Control.If(v.DataTable.DTExport.Exists,=,True)
+	f.Data.DataView.Close("DTExport","DVExport")
+	f.Data.DataTable.Close("DTExport")
+f.Intrinsic.Control.endif
+		
+	
+'v.Local.ssql.set("select rtrim(GL_NUMBER) as GLNUMBER,GL.Batch,GL.line,concat(GL.Batch,GL.line) as 'dickey',Trans_date_sql,GL.description,GL.reference,Amount_Cmpny,DB_CR_Flag, concat(WO,WO_Suffix) as 'Worder',Part,Dr_Amount,Cr_amount,account from v_GL_DETAIL GL left join v_GL_INVENTORY_DTLS INV ")
+v.Local.ssql.set("select rtrim(GL_NUMBER) as GLNUMBER,GL.Batch,GL.line,concat(GL.Batch,GL.line) as 'dickey',Trans_date_sql,GL.description,abs(Amount_Cmpny) as Amount_Cmpny,DB_CR_Flag,rtrim(concat(WO,concat(WO_Suffix,wo_SEQ))) as 'Worder',Part,tran_type,appl_type from v_GL_DETAIL GL left join v_GL_INVENTORY_DTLS INV ")
+f.Intrinsic.String.Build(" {0} on GL.batch = INV.Batch and GL.line = INV.line where Trans_date_sql between '{1}' and '{2}'",v.Local.ssql,v.Local.sfrmdt.PervasiveDate,v.Local.stodt.PervasiveDate,v.Local.ssql)
+
+
+'f.data.Datatable.CreateFromSQL("DTExport","con","select GL_NUMBER,Batch,line,Batch,line,Trans_date_sql from v_GL_DETAIL",true)
+'f.data.Datatable.CreateFromSQL("DTExport","con","select top 10 * from v_job_detail ")
+
+f.data.Datatable.CreateFromSQL("DTExport","con",v.Local.ssql,true)
+
+f.data.Datatable.AddColumn("DTExport","Colkey","string")
+
+
+f.Data.Dictionary.CreateFromSQL("DICExport","con","select concat(Batchno,Batch_Line) ,'1' as dicval from GCG_6134_Gurfeed")
+f.Data.Dictionary.SetDefaultReturn("DICExport","0")
+f.Data.DataTable.FillFromDictionary("DTExport", "DICExport","dickey","Colkey")
+
+f.Data.Dictionary.Close("DICExport")	
+
+F.Data.DataView.Create("DTExport","DVExport")
+Function.Data.DataTable.AddColumn("DTExport","INDEX_CDE","String","")
+Function.Data.DataTable.AddColumn("DTExport","LMO","String","")
+
+Function.Data.DataTable.AddColumn("DTExport","Col1","String","PSLFM2")
+Function.Data.DataTable.AddColumn("DTExport","Col2","String","2")
+Function.Data.DataTable.AddColumn("DTExport","Col5","String","30")
+Function.Data.DataTable.AddColumn("DTExport","Col6","String","JE16")
+Function.Data.DataTable.AddColumn("DTExport","Col9","String","Adrienne")
+Function.Data.DataTable.AddColumn("DTExport","Col11","String","")
+
+f.Intrinsic.Control.CallSub(Load_IndexCode)
+
+Function.Data.DataTable.AddExpressionColumn("DTExport", "SumAMT", "float", "sum(Amount_Cmpny)")
+
+Function.Data.DataTable.AddExpressionColumn("DTExport", "Trans_Desc1", "String", "Worder+dickey+description")
+
+Function.Data.DataTable.AddExpressionColumn("DTExport", "Trans_Desc", "String", "SUBSTRING(Trans_Desc1,1,35)")
+'-ve is credit
+F.Data.DataTable.AddExpressionColumn("DTExport", "DBCR", "string","IIF(DB_CR_Flag=1,'C','D')")
+
+gui.frmExport.GsGrid.AddGridViewFromDataView("GridView","DTExport","DVExport")
+
+gui.frmExport.GsGrid.GetColumnCount("GridView",v.Local.iTotClmn)
+f.Intrinsic.Math.Sub(v.Local.iTotClmn,1,v.Local.iTotClmn)
+f.Intrinsic.Control.For(v.Local.i,0,v.Local.iTotClmn,1)
+	gui.frmExport.GsGrid.GetColumnNamebyIndex("GridView",v.Local.i,v.Local.stitle)
+	gui.frmExport.GsGrid.SetColumnProperty("GridView",v.Local.stitle,"AllowEdit",False)
+	gui.frmExport.GsGrid.SetColumnProperty("GridView",v.Local.stitle,"ReadOnly",True)
+
+	gui.frmExport.GsGrid.SetColumnProperty("GridView",v.Local.stitle,"HeaderFontBold","True")
+	gui.frmExport.GsGrid.SetColumnProperty("GridView",v.Local.stitle,"HeaderBackColor","LIGHTBLUE")
+	gui.frmExport.GsGrid.SetColumnProperty("GridView",v.Local.stitle,"HeaderHAlignment","Center")
+	gui.frmExport.GsGrid.SetColumnProperty("GridView",v.Local.stitle,"HeaderWordWrap","wrap")
+f.Intrinsic.Control.Next(v.Local.i)
+
+gui.frmExport.GsGrid.AddStyleFormatCOndition("GridView", "Colkey", "tagName2","Equal","1")
+gui.frmExport.GsGrid.SetStyleFormatConditionProperty("GridView","Colkey","tagName2","backcolor","#FFFFCC")
+gui.frmExport.GsGrid.SetStyleFormatConditionProperty("GridView","Colkey","tagName2","ApplyToRow",True)
+
+gui.frmExport.GsGrid.SetColumnProperty("GridView", "Trans_date_sql", "DisplayCustomDatetime", "d")
+
+gui.frmExport.GsGrid.SetGridViewProperty("GridView", "OptionsSelectionEnableAppearanceFocusedRow", "False") 
+
+gui.frmExport.GsGrid.SetColumnProperty("GridView","Part","visible",false)
+gui.frmExport.GsGrid.SetColumnProperty("GridView","dickey","visible",false)
+
+gui.frmExport.GsGrid.SetColumnProperty("GridView","Col1","visible",false)
+gui.frmExport.GsGrid.SetColumnProperty("GridView","Col2","visible",false)
+gui.frmExport.GsGrid.SetColumnProperty("GridView","Col5","visible",false)
+gui.frmExport.GsGrid.SetColumnProperty("GridView","Col6","visible",false)
+gui.frmExport.GsGrid.SetColumnProperty("GridView","Col9","visible",false)
+gui.frmExport.GsGrid.SetColumnProperty("GridView","SumAMT","visible",false)
+gui.frmExport.GsGrid.SetColumnProperty("GridView","Trans_Desc1","visible",false)
+gui.frmExport.GsGrid.SetColumnProperty("GridView","Trans_Desc","visible",false)
+gui.frmExport.GsGrid.SetColumnProperty("GridView","DB_CR_Flag","visible",false)
+gui.frmExport.GsGrid.SetColumnProperty("GridView","Trans_Desc","visible",false)
+gui.frmExport.GsGrid.SetColumnProperty("GridView","Col11","visible",false)
+gui.frmExport.GsGrid.SetColumnProperty("GridView","Colkey","visible",false)
+gui.frmExport.GsGrid.SetColumnProperty("GridView","lmo","visible",false)
+gui.frmExport.GsGrid.SetColumnProperty("GridView","GLNUMBER","caption","GL Account")
+
+gui.frmExport.GsGrid.SetColumnProperty("GridView","GLNUMBER","MinWidth",90)
+gui.frmExport.GsGrid.SetColumnProperty("GridView","GLNUMBER","MaxWidth",90)
+gui.frmExport.GsGrid.SetColumnProperty("GridView","line","MinWidth",40)
+gui.frmExport.GsGrid.SetColumnProperty("GridView","line","MaxWidth",40)
+gui.frmExport.GsGrid.SetColumnProperty("GridView","Trans_date_sql","MinWidth",90)
+gui.frmExport.GsGrid.SetColumnProperty("GridView","Trans_date_sql","MaxWidth",90)
+gui.frmExport.GsGrid.SetColumnProperty("GridView","Amount_Cmpny","MinWidth",100)
+gui.frmExport.GsGrid.SetColumnProperty("GridView","Amount_Cmpny","MaxWidth",100)
+gui.frmExport.GsGrid.SetColumnProperty("GridView","Batch","MinWidth",60)
+gui.frmExport.GsGrid.SetColumnProperty("GridView","Batch","MaxWidth",60)
+gui.frmExport.GsGrid.SetColumnProperty("GridView","DBCR","MaxWidth",50)
+gui.frmExport.GsGrid.SetColumnProperty("GridView","DBCR","MaxWidth",50)
+gui.frmExport.GsGrid.SetColumnProperty("GridView","Worder","MinWidth",150)
+gui.frmExport.GsGrid.SetColumnProperty("GridView","Worder","MaxWidth",150)
+
+
+'gui.frmExport.GsGrid.SetColumnProperty("GridView","Batch","caption","")
+gui.frmExport.GsGrid.SetColumnProperty("GridView","line","caption","Line")
+gui.frmExport.GsGrid.SetColumnProperty("GridView","Trans_date_sql","caption","Trans Date")
+gui.frmExport.GsGrid.SetColumnProperty("GridView","description","caption","Description")
+gui.frmExport.GsGrid.SetColumnProperty("GridView","Amount_Cmpny","caption","Amount")
+'gui.frmExport.GsGrid.SetColumnProperty("GridView","DB_CR_Flag","caption","DB_CR_Flag")
+gui.frmExport.GsGrid.SetColumnProperty("GridView","Worder","caption","Work Order")
+
+gui.frmExport.GsGrid.MainView("GridView")
+
+'F.Data.DataView.close("DTExport","DVExport")
+'f.Data.DataTable.Close("DTExport")
+
+f.Intrinsic.Control.Catch
+f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdFilter_Click.End
+
+Program.Sub.cmdMaintenance_Click.Start
+f.Intrinsic.Control.Try
+	gui.frmExport.frameMaint.Visible(true)
+	gui.frmExport.GsGrid.Visible(false)
+f.Intrinsic.Control.Catch
+f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdMaintenance_Click.End
+
+Program.Sub.cmdExport_Click.Start
+f.Intrinsic.Control.Try
+
+V.Local.sRet.Declare
+v.Local.sDate.Declare
+v.Local.sTime.Declare
+V.Local.sFile.Declare
+V.Local.sHdr.Declare
+v.local.fRet.Declare
+	
+'PSLFM2|1|cmpnyAMT|GSS|30|||||||
+'PSLFM2|2|AMT|wonobatnolinepartdesc(35)|30|JE16|Batchnoline(8)|C|Adrienne|acct|BLA|
+
+
+'expressionclmn - wonobatnolinepartdesc - 35  Function.Data.DataTable.AddExpressionColumn("Import1", "ProjectCust", "String", "Customer+Project")
+'expressionclmn - case true D,C   or Dramt>0 D or Cramt>0 C  F.Data.DataTable.AddExpressionColumn("Import1", "RTE01", "string", "IIF(OrderExist<>0.001,IIF(RTE02='Y','D','N'),'N')")
+
+	
+'	
+'	F.Data.DataView.ToDataTableDistinct("DTExport","DVExport","DTTemp","Customer*!*ShipToID*!*CustExist")
+'	f.Data.DataView.Create("DTTemp","DVTemp",22,"Colkey='0'","")
+	
+
+	f.Data.DataView.SetFilter("DTExport","DVExport","Colkey='0'")
+	f.Intrinsic.Control.If(v.DataView.DTExport!DVExport.RowCount,>,0)
+	
+		Function.Data.DataTable.Compute("DTExport","Sum(Amount_Cmpny)","Colkey='0'",v.local.fRet)
+		
+		f.Intrinsic.String.Build("PSLFM2|1|{0}|GSS|30|||||||",v.local.fRet,V.Local.sHdr)
+'		
+'		Function.Data.DataView.ToString("DTExport","DVExport","Col1*!*Col2*!*Amount_Cmpny*!*Trans_Desc*!*Col5*!*Col6*!*dickey*!*DBCR*!*Col9*!*GLNUMBER*!*Col11*!*Col11","|",v.Ambient.NewLine,V.Local.sRet)	
+		Function.Data.DataView.ToString("DTExport","DVExport","Col1*!*Col2*!*Amount_Cmpny*!*Trans_Desc*!*Col5*!*Col6*!*dickey*!*DBCR*!*INDEX_CDE*!*GLNUMBER*!*Col11*!*Col11","|",v.Ambient.NewLine,V.Local.sRet)	
+		f.Intrinsic.String.Replace(v.Local.sRet,".","",v.Local.sRet)
+	
+		f.Intrinsic.String.DateString(v.Ambient.Now,v.Local.sDate)
+		f.Intrinsic.String.TimeStringSec(v.Ambient.Now,v.Local.sTime)
+
+		f.Intrinsic.String.Build("{0}{1}{2}",V.Local.sHdr,v.Ambient.NewLine,v.Local.sRet,v.Local.sRet)
+		f.Intrinsic.String.Build("{0}{1}",v.Local.sDate,v.Local.sTime,v.Local.sTime)
+	
+		F.Intrinsic.String.Build("{0}\PSLFM2{1}.TXT",v.Screen.frmExport!txtFolder.Text,v.Local.sTime,V.Local.sFile)
+		F.Intrinsic.File.String2File(V.Local.sFile,V.Local.sRet)
+		
+		F.Data.DataTable.SaveToDB("DTExport","con","GCG_6134_Gurfeed","Batch*!*line",256,"Batch@!@BatchNO*!*line@!@Batch_line")
+		f.Intrinsic.UI.Msgbox("File Export completed")
+		f.Data.DataTable.SetValue("DTExport",-1,"Colkey","1")
+
+	f.Intrinsic.Control.Else
+		f.Intrinsic.UI.Msgbox("No Data to Export")
+	f.Intrinsic.Control.EndIf
+	f.Data.DataView.SetFilter("DTExport","DVExport","Colkey='1'")
+f.Intrinsic.Control.Catch
+f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdExport_Click.End
+
+Program.Sub.cmdBrowFolder_Click.Start
+f.Intrinsic.Control.Try
+v.Local.sRet.Declare
+
+	F.Intrinsic.UI.FolderBrowser("Browse Folder",v.Local.sRet)
+	f.Intrinsic.Control.If(v.Local.sRet,!=,"***CANCEL***")
+		gui.frmExport.txtFolder.Text(v.Local.sRet)
+	F.Intrinsic.Control.EndIf
+		
+f.Intrinsic.Control.Catch
+f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdBrowFolder_Click.End
+
+Program.Sub.cmdClose_Click.Start
+f.Intrinsic.Control.Try
+
+	gui.frmExport.frameMaint.Visible(false)
+	gui.frmExport.GsGrid.Visible(true)
+
+f.Intrinsic.Control.Catch
+f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdClose_Click.End
+
+Program.Sub.ErrorMsg.Start
+v.Local.sError.Declare
+
+f.Intrinsic.String.Build("Project GCG_6134_GurfeedInterface.g2u {0}{0}Subroutine: {1}{0}Error: {2} with Description: {3}", v.Ambient.NewLine, v.Args.CurrentSub, v.Ambient.ErrorNumber, v.Ambient.ErrorDescription, v.Local.sError)
+f.Intrinsic.UI.Msgbox(v.Local.sError)
+Program.Sub.ErrorMsg.End
+
+Program.Sub.frmExport_UnLoad.Start
+f.Intrinsic.Control.Try
+
+F.Intrinsic.Control.If(V.ODBC.con.State,=,1)
+	F.ODBC.Connection!con.close
+F.Intrinsic.Control.EndIf
+	
+f.Intrinsic.Control.End
+
+f.Intrinsic.Control.Catch
+f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.frmExport_UnLoad.End
+
+Program.Sub.cmdSave_Click.Start
+f.Intrinsic.Control.Try
+
+V.Local.sFilname.Declare
+v.local.sRet.Declare
+
+v.local.sRet.Set(v.Screen.frmExport!txtFolder.text)
+f.Intrinsic.String.Build("{0}\Custom\6134\GurfeedExportsettings.new",v.Caller.GlobalDir,v.local.sFilname)
+F.Intrinsic.File.String2File(V.local.sFilname,v.local.sRet)
+f.Intrinsic.UI.Msgbox("Settings saved")
+	
+f.Intrinsic.Control.Catch
+f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry		
+Program.Sub.cmdSave_Click.End
+
+Program.Sub.Read_Settings.Start
+f.Intrinsic.Control.Try
+
+
+
+V.Local.iFile.Declare
+V.Local.sFilname.Declare
+V.Local.sText.Declare
+v.local.bRet.Declare
+V.Local.bValue.Declare
+
+f.Intrinsic.String.Build("{0}\Custom\6134\GurfeedExportsettings.new",v.Caller.GlobalDir,v.local.sFilname)
+Function.Intrinsic.File.Exists(V.Local.sFilname,v.local.bRet)
+f.Intrinsic.Control.If(v.local.bRet,=,True)
+	F.Intrinsic.File.GetHandle(V.Local.iFile)
+	F.Intrinsic.File.OpenForRead(V.Local.sFilname,V.Local.iFile)
+	F.Intrinsic.File.ReadFile(V.Local.iFile,V.Local.sText)
+	f.Intrinsic.File.CloseFile(V.Local.iFile)
+	gui.frmExport.txtFolder.Text(V.Local.sText)
+F.Intrinsic.Control.EndIf
+
+f.Global.Security.IsInGroup(v.Caller.User,"GURFEED",V.Local.bValue)
+f.Intrinsic.Control.If(V.Local.bValue)
+	gui.frmExport.cmdMaintenance.Visible(True)
+f.Intrinsic.Control.Else
+	gui.frmExport.cmdMaintenance.Visible(false)
+f.Intrinsic.Control.EndIf
+	
+
+f.Intrinsic.Control.Catch
+f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry	
+Program.Sub.Read_Settings.End
+
+Program.Sub.Check_Table.Start
+f.Intrinsic.Control.Try
+V.Local.bExists.Declare
+V.Local.sSQL.Declare
+
+F.ODBC.Connection!con.TableExists("GCG_6134_Gurfeed",V.Local.bExists)
+F.Intrinsic.Control.If(V.Local.bExists,=,False)
+	V.Local.sSQL.Set("CREATE TABLE GCG_6134_Gurfeed(BatchNo CHAR(5),Batch_Line NUMERIC(5,0) );")
+	F.ODBC.Connection!con.Execute(V.Local.sSQL)
+f.Intrinsic.Control.EndIf	
+
+F.ODBC.Connection!con.TableExists("GCG_6134_IndexCDE",V.Local.bExists)
+F.Intrinsic.Control.If(V.Local.bExists,=,False)
+	V.Local.sSQL.Set("CREATE TABLE GCG_6134_IndexCDE(DEPT_CDE VARCHAR(10) NOT NULL,INDEX_CDE VARCHAR(25));")
+	F.ODBC.Connection!con.Execute(V.Local.sSQL)
+f.Intrinsic.Control.EndIf
+	
+	
+f.Intrinsic.Control.Catch
+f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry	
+Program.Sub.Check_Table.End
+
+Program.Sub.MenuCopyToExcel.Start
+f.Intrinsic.Control.Try
+
+V.Local.sFileExport.Declare
+v.Local.bCheck.Declare
+
+
+v.Local.sDate.Declare
+v.Local.sTime.Declare
+
+	
+	f.Intrinsic.String.DateString(v.Ambient.Now,v.Local.sDate)
+	f.Intrinsic.String.TimeStringSec(v.Ambient.Now,v.Local.sTime)
+	
+	f.Intrinsic.String.Build("{0}{1}",v.Local.sDate,v.Local.sTime,v.Local.sTime)
+	
+	F.Intrinsic.String.Build("{0}Group_Codes_{1}.xlsx",V.Caller.LocalGssTempDir,v.Local.sTime,V.Local.sFileExport)
+	f.Intrinsic.File.Exists(v.Local.sFileExport,v.Local.bCheck)
+	F.Intrinsic.Control.If(v.Local.bCheck,=,true)
+		f.Intrinsic.File.DeleteFile(v.Local.sFileExport)
+	F.Intrinsic.Control.EndIf
+	gui.frmAddLines.GsGridLines.Export(V.Local.sFileExport,"xlsx")
+	F.Intrinsic.Task.ShellExec(0,"",V.Local.sFileExport,"","",1)
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+	f.Intrinsic.Control.EndTry
+Program.Sub.MenuCopyToExcel.End
+
+Program.Sub.MenuCopyfromExcel.Start
+f.Intrinsic.Control.Try
+
+V.Local.iLoop.Declare(long)
+v.Local.iret.Declare(long)
+
+V.Local.sText.Declare 
+V.Local.sFieldNames.Declare 
+V.Local.sRow.Declare 
+V.Local.sRow1.Declare 
+V.Local.sTypes.Declare 
+V.Local.sFldFilter.Declare 
+
+
+f.Intrinsic.UI.GetClipboardText(V.Local.sText)
+
+'validate for grid format
+f.Intrinsic.String.Split(v.Local.sText,v.Ambient.Tab,V.Local.sRow)
+f.Intrinsic.String.Split(v.Local.sRow,v.Ambient.NewLine,V.Local.sRow)
+f.Intrinsic.Control.If(v.Local.sRow(0),=,"OOB")
+	f.Intrinsic.UI.Msgbox("Invalid Grid format")
+	f.Intrinsic.Control.ExitSub 
+'F.Intrinsic.Control.ElseIf(V.Local.sRow(0).IsNumeric,=,False)
+F.Intrinsic.Control.ElseIf(V.Local.sRow(0).trim,=,"")
+	f.Intrinsic.UI.Msgbox("Invalid Grid format")
+	f.Intrinsic.Control.ExitSub 
+f.Intrinsic.Control.endif
+
+
+'Clear Grid & Load Data
+f.Intrinsic.Control.CallSub(ClearGrid)
+Function.Data.DataTable.DeleteRow("DTLines") 
+
+V.Local.sFieldNames.Set("DEPT_CDE*!*INDEX_CDE")
+V.Local.sTypes.Set("String*!*String")
+
+f.Intrinsic.String.Split(v.Local.sText,v.Ambient.NewLine,v.Local.sText)
+f.Intrinsic.variable.RemoveArrayElementByOrdinal(v.Local.sText,v.Local.sText.UBound,v.Local.sText)
+f.Intrinsic.String.Join(v.Local.sText,v.Local.sText)
+
+F.Intrinsic.Control.If(v.DataTable.DTImport.Exists,=,True)
+	F.Data.DataTable.Close("DTImport")
+f.Intrinsic.Control.EndIf 
+
+F.Data.DataTable.CreateFromString("DTImport",V.Local.sText,V.Local.sFieldNames,V.Local.sTypes,v.Ambient.Tab,"!*!",True)
+
+
+F.Data.DataTable.Merge("DTImport","DTLines",False,1)
+
+	f.Intrinsic.Control.If(Variable.DataTable.DTLines.rowcount,>,0)
+		v.Local.iret.Set(Variable.DataTable.DTLines.rowcount)
+	f.Intrinsic.Control.EndIf
+
+'	f.Data.DataTable.AddRow("DTLines","Action","Add")
+	
+	V.Global.bSave.Set(True)
+
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+	f.Intrinsic.Control.EndTry
+Program.Sub.MenuCopyfromExcel.End
+
+Program.Sub.MenuClearGrid.Start
+f.Intrinsic.Control.Try
+
+variable.local.returnvalue.Declare(long)
+
+Function.Intrinsic.UI.MsgBox("Do you want to clear the grid ?", "Confirm", 4, variable.local.returnvalue)
+F.Intrinsic.Control.If(variable.local.returnvalue,=,6)
+	f.Intrinsic.Control.CallSub(ClearGrid)
+f.Intrinsic.Control.EndIf 
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+	f.Intrinsic.Control.EndTry
+Program.Sub.MenuClearGrid.End
+
+Program.Sub.ClearGrid.Start
+f.Intrinsic.Control.Try
+
+Function.Data.DataTable.DeleteRow("DTLines") 
+
+F.Data.DataTable.SaveToDB("DTLines","con","GCG_6134_IndexCDE","DEPT_CDE",4,"DEPT_CDE@!@DEPT_CDE*!*INDEX_CDE@!@INDEX_CDE")
+
+F.Data.DataTable.AcceptChanges("DTLines")
+
+'f.Data.DataTable.AddRow("DTLines","Action","Add")
+
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+	f.Intrinsic.Control.EndTry
+Program.Sub.ClearGrid.End
+
+Program.Sub.create_menus.Start
+f.Intrinsic.Control.Try
+
+	gui.frmAddLines..ContextMenuCreate("MNUGRID")
+	Gui.frmAddLines.GsGridLines.ContextMenuAttach("MNUGRID")
+	Gui.frmAddLines..ContextMenuAddItem("MNUGRID","ClearGrid",0,"Clear Grid")
+	Gui.frmAddLines..ContextMenuAddItem("MNUGRID","CopyfromExcel",0,"Copy from Excel")
+	Gui.frmAddLines..ContextMenuAddItem("MNUGRID","ExporttoExcel",0,"Copy to Excel")
+	
+	Gui.frmAddLines..ContextMenuSetItemEventHandler("MNUGRID","ClearGrid","MenuClearGrid")
+	Gui.frmAddLines..ContextMenuSetItemEventHandler("MNUGRID","CopyfromExcel","MenuCopyfromExcel")
+	Gui.frmAddLines..ContextMenuSetItemEventHandler("MNUGRID","ExporttoExcel","MenuCopyToExcel")
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+	f.Intrinsic.Control.EndTry
+Program.Sub.create_menus.End
+
+Program.Sub.Load_Grid.Start
+f.Intrinsic.Control.Try
+
+
+V.Local.sSQL.Declare(String)
+V.Local.sType.Declare(String)
+v.Local.iTotClmn.Declare 
+v.Local.i.Declare
+v.Local.stitle.Declare
+'v.Local.sOrderNo.Declare
+'v.Local.sOrderLn.Declare
+v.local.iret.Declare 
+
+F.ODBC.Connection!con.OpenCompanyConnection(300)
+
+f.Intrinsic.Control.CallSub(Check_Table)
+
+V.Local.sSQL.Set("select DEPT_CDE,INDEX_CDE  from GCG_6134_IndexCDE")
+F.Intrinsic.Control.If(v.DataTable.DTLines.Exists,=,True)
+	F.Data.DataTable.Close("DTLines")
+f.Intrinsic.Control.EndIf 
+F.Data.DataTable.CreateFromSQL("DTLines","con",v.Local.sSQL,True)
+	f.Intrinsic.Control.If(Variable.DataTable.DTLines.rowcount,>,0)
+		v.Local.iret.Set(Variable.DataTable.DTLines.rowcount)
+f.Intrinsic.Control.EndIf
+	F.Data.DataView.Create("DTLines","DVLines")
+
+	gui.frmAddLines.GsGridLines.SuspendLayout 
+'Function.Intrinsic.Debug.InvokeDebugger
+'Function.Intrinsic.Debug.Stop
+
+	F.Data.DataTable.AddColumn("DTLines","Action","string","Delete")
+'	Product_CDE,Product_DESC,Product_WHO
+
+	'Add Blank row for data entry	
+'	f.Data.DataTable.AddRow("DTLines","Action","Add")
+
+	gui.frmAddLines.GsGridLines.AddGridViewFromDataView("GridView","DTLines","DVLines")
+
+	gui.frmAddLines.GsGridLines.GetColumnCount("GridView",v.Local.iTotClmn)
+	f.Intrinsic.Math.Sub(v.Local.iTotClmn,1,v.Local.iTotClmn)
+	f.Intrinsic.Control.For(v.Local.i,0,v.Local.iTotClmn,1)
+		gui.frmAddLines.GsGridLines.GetColumnNamebyIndex("GridView",v.Local.i,v.Local.stitle)
+		gui.frmAddLines.GsGridLines.SetColumnProperty("GridView",v.Local.stitle,"AllowEdit",False)
+		gui.frmAddLines.GsGridLines.SetColumnProperty("GridView",v.Local.stitle,"ReadOnly",True)
+
+		gui.frmAddLines.GsGridLines.SetColumnProperty("GridView",v.Local.stitle,"HeaderFontBold","True")
+		gui.frmAddLines.GsGridLines.SetColumnProperty("GridView",v.Local.stitle,"HeaderBackColor","#7FFF00")
+		gui.frmAddLines.GsGridLines.SetColumnProperty("GridView",v.Local.stitle,"HeaderHAlignment","Center")
+	f.Intrinsic.Control.Next(v.Local.i)
+
+	gui.frmAddLines.GsGridLines.SetGridViewProperty("GridView", "ColumnPanelRowHeight", "40")
+	Gui.frmAddLines.GsGridLines.SetGridviewProperty("GridView","OptionsViewRowAutoHeight",True)
+
+'	gui.frmAddLines.GsGridLines.SetColumnProperty("GridView","Product_CDE","AllowEdit",True)
+'	gui.frmAddLines.GsGridLines.SetColumnProperty("GridView","Product_CDE","ReadOnly",False)
+'	gui.frmAddLines.GsGridLines.SetColumnProperty("GridView","Product_DESC","AllowEdit",True)
+'	gui.frmAddLines.GsGridLines.SetColumnProperty("GridView","Product_DESC","ReadOnly",False)
+'	gui.frmAddLines.GsGridLines.SetColumnProperty("GridView","Product_WHO","AllowEdit",True)
+'	gui.frmAddLines.GsGridLines.SetColumnProperty("GridView","Product_WHO","ReadOnly",False)
+	
+	
+	gui.frmAddLines.GsGridLines.SetColumnProperty("GridView","DEPT_CDE","MinWidth",120)
+	gui.frmAddLines.GsGridLines.SetColumnProperty("GridView","DEPT_CDE","MaxWidth",120)
+	
+	gui.frmAddLines.GsGridLines.SetColumnProperty("GridView","Action","MinWidth",70)
+	gui.frmAddLines.GsGridLines.SetColumnProperty("GridView","Action","MaxWidth",70)
+	
+	gui.frmAddLines.GsGridLines.SetColumnProperty("GridView","INDEX_CDE","MinWidth",150)
+	gui.frmAddLines.GsGridLines.SetColumnProperty("GridView","INDEX_CDE","MaxWidth",150)
+	
+	gui.frmAddLines.GsGridLines.SetColumnProperty("GridView","DEPT_CDE","Caption","Dept Code")
+	gui.frmAddLines.GsGridLines.SetColumnProperty("GridView","INDEX_CDE","Caption","Index Code")
+
+
+	Gui.frmAddLines.GsGridLines.SetColumnProperty("GridView","Action","CellHAlignment","center")
+
+	gui.frmAddLines.GsGridLines.SetGridViewProperty("GridView", "OptionsSelectionEnableAppearanceFocusedRow", "False") 
+
+	gui.frmAddLines.GsGridLines.ResumeLayout 
+
+	gui.frmAddLines.GsGridLines.MainView("GridView")
+
+	'Create Context Menus
+	f.Intrinsic.Control.CallSub(create_menus)
+
+	gui.frmAddLines.GsGridLines.Anchor(15)
+	gui.frmAddLines.cmdSaveMaint.Anchor(10)
+	gui.frmAddLines..Show 
+
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+	f.Intrinsic.Control.EndTry
+Program.Sub.Load_Grid.End
+
+Program.Sub.GsGridlines_RowCellClick.Start
+f.Intrinsic.Control.Try
+
+Variable.local.sRet.Declare
+
+f.Intrinsic.Control.BlockEvents 
+f.Intrinsic.Control.If(V.Args.column,=,"Action")
+'	gui.frmAddLines.GsGridLines.GetCellValue("GridView",8,V.Args.RowIndex,Variable.local.sRet)
+	gui.frmAddLines.GsGridLines.GetCellValueByColumnName("GridView",V.Args.column,V.Args.RowIndex,Variable.local.sRet)
+	'check key for Delete
+	f.Intrinsic.Control.If(Variable.local.sRet,=,"Delete")
+		f.Data.DataTable.DeleteRow("DTLines",V.Args.RowIndex)
+		F.Data.DataTable.SaveToDB("DTLines","con","GCG_6134_IndexCDE","DEPT_CDE",4,"DEPT_CDE@!@DEPT_CDE*!*INDEX_CDE@!@INDEX_CDE")
+		V.Global.bSave.Set(True)
+	f.Intrinsic.Control.endif
+f.Intrinsic.Control.endif
+f.Intrinsic.Control.UnBlockEvents 
+f.Intrinsic.Control.Catch
+f.Intrinsic.Control.UnBlockEvents 
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+	f.Intrinsic.Control.EndTry
+Program.Sub.GsGridlines_RowCellClick.End
+
+Program.Sub.cmdSaveMaint_Click.Start
+f.Intrinsic.Control.Try
+
+V.Local.sRet.Declare(string)
+V.Local.sFieldNames.Declare(string)
+V.Local.sTypes.Declare(string)
+
+F.Intrinsic.Control.If(V.DataView.DTLines!DVSave.Exists,=,True)
+	Function.Data.DataView.Close("DTLines","DVSave")
+f.Intrinsic.Control.EndIf 
+
+
+f.Data.DataView.Create("DTLines","DVSave",22,"DEPT_CDE <>'' and INDEX_CDE <>''","")
+
+f.Data.DataView.ToDataTable("DTLines","DVSave","DTSave")
+F.Data.DataTable.SaveToDB("DTSave","con","GCG_6134_IndexCDE","DEPT_CDE",256,"DEPT_CDE@!@DEPT_CDE*!*INDEX_CDE@!@INDEX_CDE")
+
+
+V.Global.bSave.Set(False)
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+	f.Intrinsic.Control.EndTry	
+Program.Sub.cmdSaveMaint_Click.End
+Program.Sub.Unload.Start
+F.Intrinsic.UI.CloseWaitDialog
+
+variable.local.returnvalue.Declare(String)
+
+F.Intrinsic.Control.If(V.Global.bSave,=,True)
+	Function.Intrinsic.UI.MsgBox("Changes not saved, Do you want to save the changes ?", "Confirm", 4, variable.local.returnvalue)
+	F.Intrinsic.Control.If(variable.local.returnvalue,=,6)
+		f.Intrinsic.Control.CallSub(cmdSaveMaint_Click)
+	f.Intrinsic.Control.EndIf 
+f.Intrinsic.Control.EndIf 
+
+'f.Intrinsic.Control.If(v.ODBC!conx.State, =,1)
+F.Intrinsic.Control.If(V.ODBC.con.State,=,1)
+	F.ODBC.Connection!con.close
+F.Intrinsic.Control.EndIf
+	
+f.Intrinsic.Control.End
+
+f.Intrinsic.Control.Catch
+		f.Intrinsic.Control.End
+	f.Intrinsic.Control.EndTry
+	
+Program.Sub.Unload.End
+
+Program.Sub.Load_IndexCode.Start
+f.Intrinsic.Control.Try
+v.Local.sSql.Declare
+v.Local.sRet.Declare
+v.Local.i.Declare
+
+
+
+' select concat(WO,concat(WO_Suffix,wo_SEQ)) as 'Worder',INDEX_CDE,lmo from GL_INVENTORY_DTLS join v_job_detail on wo = job and WO_Suffix = suffix and wo_SEQ = seq and WO_KEy_SEQ = sequence_key   join v_WORKCENTERS on WC_DEPT = dept_Workcenter join GCG_6134_IndexCDE on dept_Workcenter = DEPT_CDE where wo+WO_Suffix+wo_SEQ IN ('210803 000 001000','210803 000 001000')
+ 
+f.Data.DataView.SetFilter("DTExport","DVExport","Worder<>''")
+f.Intrinsic.Control.If(v.DataView.DTExport!DVExport.RowCount,>,0)
+	Function.Data.DataView.ToString("DTExport","DVExport","Worder","*!*",",",V.Local.sRet)	
+	f.Intrinsic.String.Split(V.Local.sRet,",",V.Local.sRet)
+	Function.Intrinsic.String.RemoveArrayDuplicates(V.Local.sRet,V.Local.sRet)
+	
+	F.Intrinsic.Control.For(v.Local.i,0,V.Local.sRet.UBound,1)
+		f.Intrinsic.String.Build("'{0}'",V.Local.sRet(v.Local.i),V.Local.sRet(v.Local.i))
+	f.Intrinsic.Control.Next(v.Local.i)
+	f.Intrinsic.String.Join(V.Local.sRet,",",V.Local.sRet)
+		
+	',WO_KEy_SEQ,DEPT_CDE
+	v.Local.ssql.Set("select distinct rtrim(concat(WO,concat(WO_Suffix,wo_SEQ))) as 'Worder',INDEX_CDE,lmo from GL_INVENTORY_DTLS join v_job_detail on wo = job and WO_Suffix = suffix and wo_SEQ = seq and WO_KEy_SEQ = sequence_key  ")
+	f.Intrinsic.String.Build(" {0} left join v_WORKCENTERS on WC_DEPT = dept_Workcenter left join GCG_6134_IndexCDE on dept_Workcenter = DEPT_CDE where wo+WO_Suffix+wo_SEQ IN ({1})",v.Local.ssql,v.Local.sRet,v.Local.ssql)
+	
+'	v.Local.ssql.Set("select concat(rtrim(WO),concat(rtrim(WO_Suffix),rtrim(wo_SEQ))) as 'Worder',lmo,dept_Workcenter from GL_INVENTORY_DTLS join v_job_detail on wo = job and WO_Suffix = suffix and wo_SEQ = seq and WO_KEy_SEQ = sequence_key  ")
+'	f.Intrinsic.String.Build(" {0} join v_WORKCENTERS on WC_DEPT = dept_Workcenter where wo+WO_Suffix+wo_SEQ IN ({1})",v.Local.ssql,v.Local.sRet,v.Local.ssql)
+
+'	v.Local.ssql.Set("select concat(WO,concat(WO_Suffix,wo_SEQ)) as 'Worder',lmo,dept_Workcenter from GL_INVENTORY_DTLS left join v_job_detail on wo = job and WO_Suffix = suffix and wo_SEQ = seq and WO_KEy_SEQ = sequence_key  ")
+'	f.Intrinsic.String.Build(" {0} where wo+WO_Suffix+wo_SEQ IN ({1})",v.Local.ssql,v.Local.sRet,v.Local.ssql)
+
+'	v.Local.ssql.Set("select concat(rtrim(WO),concat(rtrim(WO_Suffix),rtrim(wo_SEQ))) as 'Worder',lmo,dept_Workcenter from GL_INVENTORY_DTLS left join v_job_detail on wo = job and WO_Suffix = suffix and wo_SEQ = seq and WO_KEy_SEQ = sequence_key  ")
+'	f.Intrinsic.String.Build(" {0} where wo+WO_Suffix IN ('210803 000','210803 000')",v.Local.ssql,v.Local.sRet,v.Local.ssql)
+
+
+	f.data.Datatable.CreateFromSQL("DTTemp","con",v.Local.ssql)
+	f.Intrinsic.Control.If(v.DataTable.DTTemp.RowCount,>,0)
+		F.Data.Dictionary.CreateFromDataTable("dtXdic","DTTemp","Worder","INDEX_CDE")
+		f.Data.Dictionary.SetDefaultReturn("dtXdic","0")
+		f.Data.DataTable.FillFromDictionary("DTExport", "dtXdic","Worder","INDEX_CDE")
+		f.Data.Dictionary.Close("dtXdic")
+		
+		F.Data.Dictionary.CreateFromDataTable("dtXdic","DTTemp","Worder","lmo")
+		f.Data.Dictionary.SetDefaultReturn("dtXdic","0")
+		f.Data.DataTable.FillFromDictionary("DTExport", "dtXdic","Worder","LMO")
+		f.Data.Dictionary.Close("dtXdic")
+	f.Intrinsic.Control.EndIf
+	f.Data.Datatable.Close("DTTemp")
+f.Intrinsic.Control.EndIf
+
+
+'All account numbers from  0 to 599999 belong to index # 704091
+f.Data.DataView.SetFilter("DTExport","DVExport","LMO='M' or GLNUMBER <= '599999' ")
+f.Data.DataView.SetValue("DTExport","DVExport",-1,"INDEX_CDE","704091")
+
+'reset filter
+f.Data.DataView.SetFilter("DTExport","DVExport","")
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.Load_IndexCode.End
+
+Program.Sub.Comments.Start
+${$5$}$3.0.0.0$}$1
+${$6$}$rnair$}$20201023112713923$}$JUGEdtlNdgRUPvge2DQ26QlJ++3xMCFeK7kc9hxhIh47Jr8K13rrO58xnbQWPTwG0kYCgHACm2Q=
+Program.Sub.Comments.End
